@@ -1,0 +1,279 @@
+{
+	"info": {
+		"_postman_id": "4446fd2f-6181-4021-b86e-d1eb87858309",
+		"name": "Event Management System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2304060",
+		"_collection_link": "https://stride-learning-v1.postman.co/workspace/Stride-Learning-Workspace~a01647a6-cf67-4ee3-9f8c-ba926985c6f9/collection/2304060-4446fd2f-6181-4021-b86e-d1eb87858309?action=share&source=collection_link&creator=2304060"
+	},
+	"item": [
+		{
+			"name": "create Event/s usecases",
+			"item": [
+				{
+					"name": "create event/s",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Meeti\",\n    \"creator_email\": \"pradeep@gmail.com\",\n    \"country\": \"Nepal\",\n    \"description\": \"Project discussion\",\n    \"start_time\": \"2024-11-06T05:15:00.000Z\",\n    \"end_time\": \"2024-11-06T06:15:00.000Z\",\n    \"time_zone\": \"Asia/Kathmandu\",\n    \"location\": \"Conference Room\",\n    \"participants\": [\n        {\n            \"name\": \"Johnnjjj Doe\",\n            \"email\": \"johngg@example.com\",\n            \"rsvp_status\": \"accepted\"\n        },\n        {\n            \"name\": \"Janee Smith\",\n            \"email\": \"jane@example.com\",\n            \"rsvp_status\": \"pending\"\n        }\n    ]\n    // \"recurrence_type\": \"monthly\"\n    // \"recurrence_end_date\": \"2024-12-17T11:15:00.000Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/events/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"events",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create recurring event",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Meeti\",\n    \"creator_email\": \"pradeepnew@gmail.com\",\n    \"country\": \"Nepal\",\n    \"description\": \"Project discussion\",\n    \"start_time\": \"2024-11-06T05:15:00.000Z\",\n    \"end_time\": \"2024-11-06T06:15:00.000Z\",\n    \"time_zone\": \"Asia/Kathmandu\",\n    \"location\": \"Conference Room\",\n    \"participants\": [\n        {\n            \"name\": \"Johnnjjj Doe\",\n            \"email\": \"johngg@example.com\",\n            \"rsvp_status\": \"accepted\"\n        },\n        {\n            \"name\": \"Janee Smith\",\n            \"email\": \"jane@example.com\",\n            \"rsvp_status\": \"pending\"\n        }\n    ],\n    \"recurrence_type\": \"monthly\",\n    \"recurrence_end_date\": \"2024-12-17T11:15:00.000Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/events/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"events",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create recurring event  for Japan",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Meeti\",\n    \"creator_email\": \"pradeenew@gmail.com\",\n    \"description\": \"Project discussion\",\n    \"start_time\": \"2024-11-06T05:15:00.000Z\",\n    \"end_time\": \"2024-11-06T06:15:00.000Z\",\n    \"time_zone\": \"Asia/Kathmandu\",\n    \"location\": \"Conference Room\",\n    \"participants\": [\n        {\n            \"name\": \"Johnnjjj Doe\",\n            \"email\": \"johngg@example.com\",\n            \"rsvp_status\": \"accepted\"\n        },\n        {\n            \"name\": \"Janee Smith\",\n            \"email\": \"jane@example.com\",\n            \"rsvp_status\": \"pending\"\n        }\n       \n        \n    ],\n    \"country\": \"Japan\",\n    \"recurrence_type\": \"daily\",\n    \"recurrence_end_date\": \"2024-11-17T11:15:00.000Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/events/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"events",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "get events by user email",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"pradeep@gmail.com\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/events/events-by-user-email",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"events",
+						"events-by-user-email"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get event by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/events/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"events",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all events",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/events",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "rsvp event by id",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"jane@example.com\",\n    \"rsvp_status\": \"declined\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/events/1/rsvp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"events",
+						"1",
+						"rsvp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update event by id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"creator_email\": \"pradeep@gmail.com\",\n    \"country\": \"Nepal\",\n    // \"title\": \"Updated Project Meeting\",\n    //   \"description\": \"Discuss updated project requirements\",\n    \"start_time\": \"2024-11-05T14:00:00.000Z\",\n    \"end_time\": \"2024-11-07T15:00:00.000Z\",\n    \"time_zone\": \"America/New_York\",\n    //   \"location\": \"Updated Conference Room\",\n    \"participantsToAdd\": [\n        {\n            \"name\": \"New Participant\",\n            \"email\": \"newparticipant@exampl.com\"\n        }\n    ]\n    // \"participantsToRemove\": [\n    // ] // Participant IDs to remove\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/events/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"events",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete event by id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"creator_email\":\"pradeep@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/events/1/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"events",
+						"1",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "express js sample api",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
