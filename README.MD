@@ -92,7 +92,7 @@ By following these steps, you should be able to run the application in a local d
 **POSTMAN COLLECTION**
 For more details about api endpoints, the postman collection is located at following path from the root folder of this codebase/repo:
 
-    ./postman/EventManagementSystemAPI.postman_collection.json
+    ### ./postman/EventManagementSystemAPI.postman_collection.json
 
     - download this json file and import this collection in your POSTMAN , then you will be able to see the api list and try them hitting after starting the project/server in the development mode.
 
